@@ -1,0 +1,117 @@
+############################
+# Python / Jupyter
+############################
+__pycache__/
+*.py[cod]
+*.so
+.ipynb_checkpoints/
+*.log
+
+############################
+# VS Code / IDE
+############################
+.vscode/
+.idea/
+*.swp
+*.swo
+
+############################
+# Conda / Virtualenv
+############################
+.env
+.venv
+env/
+venv/
+conda-env/
+*.conda
+
+############################
+# PyTorch / HF training artifacts
+############################
+# Checkpoints
+checkpoint-*/
+**/checkpoint-*/
+
+# Model weights
+*.pt
+*.pth
+*.bin
+*.safetensors
+
+# Trainer / optimizer state
+optimizer.pt
+scheduler.pt
+trainer_state.json
+training_args.bin
+rng_state.pth
+
+############################
+# LoRA / Adapter outputs
+############################
+# Ignore generated adapter weights
+adapter_model.safetensors
+
+# But allow adapter configs & READMEs
+!adapter_config.json
+!README.md
+
+############################
+# Outputs / experiments
+############################
+sft_llava_output/
+outputs/
+runs/
+wandb/
+tensorboard/
+tb_logs/
+
+############################
+# HuggingFace cache
+############################
+.cache/
+huggingface/
+hf_cache/
+
+############################
+# Data (IMPORTANT)
+############################
+data/
+datasets/
+*.arrow
+*.parquet
+
+############################
+# OS
+############################
+.DS_Store
+Thumbs.db
+
+############################
+# Misc
+############################
+nohup.out
+*.tmp
+
+# ===== Training artifacts (do not commit) =====
+# Checkpoints anywhere
+checkpoint-*/
+**/checkpoint-*/
+
+# Weights / adapters / torch dumps
+*.safetensors
+*.pt
+*.pth
+*.bin
+
+# HF trainer states
+optimizer.pt
+scheduler.pt
+trainer_state.json
+training_args.bin
+rng_state.pth
+
+# Common output dirs
+outputs/
+runs/
+wandb/
+tb_logs/
