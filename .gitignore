@@ -28,11 +28,11 @@ conda-env/
 ############################
 # PyTorch / HF training artifacts
 ############################
-# Checkpoints
+# Checkpoints (anywhere)
 checkpoint-*/
 **/checkpoint-*/
 
-# Model weights
+# Model / torch weights (default: ignore all)
 *.pt
 *.pth
 *.bin
@@ -48,12 +48,13 @@ rng_state.pth
 ############################
 # LoRA / Adapter outputs
 ############################
-# Ignore generated adapter weights
+# Ignore generated adapter weights everywhere
 adapter_model.safetensors
 
-# But allow adapter configs & READMEs
-!adapter_config.json
-!README.md
+# BUT allow exactly one blessed final adapter
+!final_adapter/
+!final_adapter/adapter_model.safetensors
+!final_adapter/adapter_config.json
 
 ############################
 # Outputs / experiments
@@ -91,27 +92,3 @@ Thumbs.db
 ############################
 nohup.out
 *.tmp
-
-# ===== Training artifacts (do not commit) =====
-# Checkpoints anywhere
-checkpoint-*/
-**/checkpoint-*/
-
-# Weights / adapters / torch dumps
-*.safetensors
-*.pt
-*.pth
-*.bin
-
-# HF trainer states
-optimizer.pt
-scheduler.pt
-trainer_state.json
-training_args.bin
-rng_state.pth
-
-# Common output dirs
-outputs/
-runs/
-wandb/
-tb_logs/
